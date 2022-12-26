@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int main()
+
+{
+  
+  int arr[]={10,20,11,12,10,176,10,27,10};
+  int size=sizeof(arr)/sizeof(arr[0]);
+  
+  int search_element,freq=0;
+ 
+   scanf("%d",& search_element);
+  
+  for(int index =0;index<size;index++)
+    
+
+        if(arr[index]==search_element)
+   
+     
+           freq++;
+
+      
+    printf("frequency:%d\n",freq);
+
+    return 0;
+
+}
