@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+size_t lsl( char s[], size_t n )
+{
+    size_t length = 0;
+    
+    if ( fgets( s, n, stdin ) )
+    {
+        s[ strcspn( s, "\n" ) ] = '\0';
+
+        size_t i = strlen( s );
+        
+        while ( i != 0 && isspace( ( unsigned char )s[i -1] ) ) --i;
+        
+        while ( i != 0 && !isspace( ( unsigned char )s[--i] ) )
+        {
+            ++length;
+        }
+    }
+    
+    return length;
+}
+
+int main(void) 
+{
+    enum { N = 5000 };
+    
+    char s[N];
+    
+    size_t length = lsl( s, N );
+    
+    if ( length != 0 )
+    {
+        printf( "The length of the last word in the string \"%s\"\n", s );
+        printf( "is %zu\n", length );
+    }
+    
+    return 0;
+}
