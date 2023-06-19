@@ -1,0 +1,22 @@
+#include<stdio.h>
+enum days {sunday,monday,tuesday,wednesday,thursday,friday,saturday};
+int main()
+{
+    int day;
+    scanf("%d",&day);
+    if(day==sunday||day==saturday)
+    {
+        printf("enjoy the weekend");
+    }
+    else
+    {
+        printf("concentrate on your study");
+    }
+    return 0;
+}
+
+output=
+3
+concentrate on your study
+6
+enjoy the weekend
