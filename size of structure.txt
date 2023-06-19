@@ -1,0 +1,15 @@
+#include<stdio.h>
+struct student
+{
+    int rollno;
+    long int phone;
+    char name[30];
+    char result[5];
+    double cgpa;
+}student;
+int main()
+{
+    printf("%lu",sizeof(student));
+    return 0;
+}
+output=64
