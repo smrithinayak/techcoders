@@ -1,0 +1,42 @@
+//program for implement the binary search using recursion
+#include<stdio.h>
+int BinarySearch(int arr[],int key,int size)
+{
+    for(int lb=0,ub=size-1,middle;lb<=ub;)
+    {
+        middle=(lb+ub)/2;
+        if(arr[middle]==key)
+        {
+            return middle;
+            
+        }
+        else if(arr[middle]>key)
+        {
+            ub=middle-1;
+            
+           
+        }
+        else
+        { 
+            lb=middle+1;
+            
+        
+        }
+    }
+    return -1;
+    
+}
+int main()
+{
+    int List[]={10,20,30,40,50,60,70,80};
+    int len=sizeof(List)/sizeof(List[0]),key=80;
+    int index=BinarySearch(List,key,len);
+    if(index==-1)
+        printf("%d not present",key);
+    else
+        printf("%d is found at %d",key,index);
+}
+
+
+output
+80 is found at 7
