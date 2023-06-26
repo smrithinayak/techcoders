@@ -34,7 +34,7 @@ int main()
     if(index==-1)
         printf("%d not present",key);
     else
-        printf("%d is found at %d",key,index);
+        printf("%d is found at %d",key,index+1);
 }
 
 
