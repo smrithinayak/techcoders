@@ -1,0 +1,33 @@
+//program to create new text file
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    FILE *fptr;
+    char filename[30];
+    scanf("%s",filename);
+    //opening <filename> for writting content
+    fptr=fopen(filename,"w");
+    //checking whether tje file is created or not
+    if(fptr==NULL)
+    {
+        printf("file creation error");
+        exit(0);
+    }
+    //file is created
+
+while(1)
+{
+    char ch;
+    //getting character
+    ch=getc(stdin);
+    //checking whether the character is end of file
+    if(ch=='Q')break;
+     break;
+    //otherwise write that character into the file
+    fputc(ch,fptr);
+}
+printf("%s file saved",filename);
+fclose(fptr);
+return 0;
+}
